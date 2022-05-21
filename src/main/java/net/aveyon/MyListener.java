@@ -29,6 +29,12 @@ public class MyListener extends SolidityParserBaseListener {
         smartContractModel.getDefinitions().getInterfaces().add(iface);
     }
 
+    @Override
+    public void exitContractDefinition(SolidityParser.ContractDefinitionContext ctx) {
+        SmartContract sc = new SmartContractImpl(ctx.identifier().getText());
+        smartContractModel.getDefinitions().getContracts().add(sc);
+    }
+
     public SmartContractModel getSmartContractModel() {
         return smartContractModel;
     }
