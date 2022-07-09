@@ -1,8 +1,8 @@
-package net.aveyon;
+package net.aveyon.solidity_parser;
 
 import net.aveyon.intermediate_solidity.SmartContractModel;
-import net.aveyon.parser.SolidityLexer;
-import net.aveyon.parser.SolidityParser;
+import net.aveyon.solidity_parser.parser.SolidityLexer;
+import net.aveyon.solidity_parser.parser.SolidityParser;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
@@ -13,8 +13,7 @@ import java.io.*;
 import java.net.URISyntaxException;
 import java.util.Objects;
 
-public class App
-{
+public class App implements Api {
     public static void main(String[] args) throws IOException, URISyntaxException {
         String file = "sm_purchase.plantuml";
 
@@ -35,10 +34,11 @@ public class App
 
     /**
      * Public API for parsing a solidity file
+     *
      * @param solidityFilePath Path to your solidity file
      * @return Intermediate Solidity representation of your solidity file
      */
-    public static SmartContractModel parse(String solidityFilePath) {
+    public SmartContractModel parse(String solidityFilePath) {
         File f = new File(solidityFilePath);
         if (!f.exists()) {
             return null;

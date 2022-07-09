@@ -1,12 +1,10 @@
 // Generated from SolidityParser.g4 by ANTLR 4.10.1
-package net.aveyon.parser;
+package net.aveyon.solidity_parser.parser;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
-import org.antlr.v4.runtime.misc.*;
 import org.antlr.v4.runtime.tree.*;
 import java.util.List;
-import java.util.Iterator;
 import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
@@ -17,93 +15,93 @@ public class SolidityParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		ReservedKeywords=1, Pragma=2, Abstract=3, Anonymous=4, Address=5, As=6, 
-		Assembly=7, Bool=8, Break=9, Bytes=10, Calldata=11, Catch=12, Constant=13, 
-		Constructor=14, Continue=15, Contract=16, Delete=17, Do=18, Else=19, Emit=20, 
-		Enum=21, Error=22, Revert=23, Event=24, External=25, Fallback=26, False=27, 
-		Fixed=28, From=29, FixedBytes=30, For=31, Function=32, Global=33, Hex=34, 
-		If=35, Immutable=36, Import=37, Indexed=38, Interface=39, Internal=40, 
-		Is=41, Library=42, Mapping=43, Memory=44, Modifier=45, New=46, NumberUnit=47, 
-		Override=48, Payable=49, Private=50, Public=51, Pure=52, Receive=53, Return=54, 
-		Returns=55, SignedIntegerType=56, Storage=57, String=58, Struct=59, True=60, 
-		Try=61, Type=62, Ufixed=63, Unchecked=64, UnsignedIntegerType=65, Using=66, 
-		View=67, Virtual=68, While=69, LParen=70, RParen=71, LBrack=72, RBrack=73, 
-		LBrace=74, RBrace=75, Colon=76, Semicolon=77, Period=78, Conditional=79, 
-		DoubleArrow=80, RightArrow=81, Assign=82, AssignBitOr=83, AssignBitXor=84, 
-		AssignBitAnd=85, AssignShl=86, AssignSar=87, AssignShr=88, AssignAdd=89, 
-		AssignSub=90, AssignMul=91, AssignDiv=92, AssignMod=93, Comma=94, Or=95, 
-		And=96, BitOr=97, BitXor=98, BitAnd=99, Shl=100, Sar=101, Shr=102, Add=103, 
-		Sub=104, Mul=105, Div=106, Mod=107, Exp=108, Equal=109, NotEqual=110, 
-		LessThan=111, GreaterThan=112, LessThanOrEqual=113, GreaterThanOrEqual=114, 
-		Not=115, BitNot=116, Inc=117, Dec=118, DoubleQuote=119, SingleQuote=120, 
-		NonEmptyStringLiteral=121, EmptyStringLiteral=122, UnicodeStringLiteral=123, 
-		HexString=124, HexNumber=125, DecimalNumber=126, Identifier=127, WS=128, 
-		COMMENT=129, LINE_COMMENT=130, AssemblyDialect=131, AssemblyLBrace=132, 
-		AssemblyFlagString=133, AssemblyBlockLParen=134, AssemblyBlockRParen=135, 
-		AssemblyBlockComma=136, AssemblyBlockWS=137, AssemblyBlockCOMMENT=138, 
-		AssemblyBlockLINE_COMMENT=139, YulBreak=140, YulCase=141, YulContinue=142, 
-		YulDefault=143, YulFalse=144, YulFor=145, YulFunction=146, YulIf=147, 
-		YulLeave=148, YulLet=149, YulSwitch=150, YulTrue=151, YulHex=152, YulEVMBuiltin=153, 
-		YulLBrace=154, YulRBrace=155, YulLParen=156, YulRParen=157, YulAssign=158, 
-		YulPeriod=159, YulComma=160, YulArrow=161, YulIdentifier=162, YulHexNumber=163, 
-		YulDecimalNumber=164, YulStringLiteral=165, YulHexStringLiteral=166, YulWS=167, 
-		YulCOMMENT=168, YulLINE_COMMENT=169, PragmaToken=170, PragmaSemicolon=171, 
+		ReservedKeywords=1, Pragma=2, Abstract=3, Anonymous=4, Address=5, As=6,
+		Assembly=7, Bool=8, Break=9, Bytes=10, Calldata=11, Catch=12, Constant=13,
+		Constructor=14, Continue=15, Contract=16, Delete=17, Do=18, Else=19, Emit=20,
+		Enum=21, Error=22, Revert=23, Event=24, External=25, Fallback=26, False=27,
+		Fixed=28, From=29, FixedBytes=30, For=31, Function=32, Global=33, Hex=34,
+		If=35, Immutable=36, Import=37, Indexed=38, Interface=39, Internal=40,
+		Is=41, Library=42, Mapping=43, Memory=44, Modifier=45, New=46, NumberUnit=47,
+		Override=48, Payable=49, Private=50, Public=51, Pure=52, Receive=53, Return=54,
+		Returns=55, SignedIntegerType=56, Storage=57, String=58, Struct=59, True=60,
+		Try=61, Type=62, Ufixed=63, Unchecked=64, UnsignedIntegerType=65, Using=66,
+		View=67, Virtual=68, While=69, LParen=70, RParen=71, LBrack=72, RBrack=73,
+		LBrace=74, RBrace=75, Colon=76, Semicolon=77, Period=78, Conditional=79,
+		DoubleArrow=80, RightArrow=81, Assign=82, AssignBitOr=83, AssignBitXor=84,
+		AssignBitAnd=85, AssignShl=86, AssignSar=87, AssignShr=88, AssignAdd=89,
+		AssignSub=90, AssignMul=91, AssignDiv=92, AssignMod=93, Comma=94, Or=95,
+		And=96, BitOr=97, BitXor=98, BitAnd=99, Shl=100, Sar=101, Shr=102, Add=103,
+		Sub=104, Mul=105, Div=106, Mod=107, Exp=108, Equal=109, NotEqual=110,
+		LessThan=111, GreaterThan=112, LessThanOrEqual=113, GreaterThanOrEqual=114,
+		Not=115, BitNot=116, Inc=117, Dec=118, DoubleQuote=119, SingleQuote=120,
+		NonEmptyStringLiteral=121, EmptyStringLiteral=122, UnicodeStringLiteral=123,
+		HexString=124, HexNumber=125, DecimalNumber=126, Identifier=127, WS=128,
+		COMMENT=129, LINE_COMMENT=130, AssemblyDialect=131, AssemblyLBrace=132,
+		AssemblyFlagString=133, AssemblyBlockLParen=134, AssemblyBlockRParen=135,
+		AssemblyBlockComma=136, AssemblyBlockWS=137, AssemblyBlockCOMMENT=138,
+		AssemblyBlockLINE_COMMENT=139, YulBreak=140, YulCase=141, YulContinue=142,
+		YulDefault=143, YulFalse=144, YulFor=145, YulFunction=146, YulIf=147,
+		YulLeave=148, YulLet=149, YulSwitch=150, YulTrue=151, YulHex=152, YulEVMBuiltin=153,
+		YulLBrace=154, YulRBrace=155, YulLParen=156, YulRParen=157, YulAssign=158,
+		YulPeriod=159, YulComma=160, YulArrow=161, YulIdentifier=162, YulHexNumber=163,
+		YulDecimalNumber=164, YulStringLiteral=165, YulHexStringLiteral=166, YulWS=167,
+		YulCOMMENT=168, YulLINE_COMMENT=169, PragmaToken=170, PragmaSemicolon=171,
 		PragmaWS=172, PragmaCOMMENT=173, PragmaLINE_COMMENT=174;
 	public static final int
-		RULE_sourceUnit = 0, RULE_pragmaDirective = 1, RULE_importDirective = 2, 
-		RULE_importAliases = 3, RULE_path = 4, RULE_symbolAliases = 5, RULE_contractDefinition = 6, 
-		RULE_interfaceDefinition = 7, RULE_libraryDefinition = 8, RULE_inheritanceSpecifierList = 9, 
-		RULE_inheritanceSpecifier = 10, RULE_contractBodyElement = 11, RULE_namedArgument = 12, 
-		RULE_callArgumentList = 13, RULE_identifierPath = 14, RULE_modifierInvocation = 15, 
-		RULE_visibility = 16, RULE_parameterList = 17, RULE_parameterDeclaration = 18, 
-		RULE_constructorDefinition = 19, RULE_stateMutability = 20, RULE_overrideSpecifier = 21, 
-		RULE_functionDefinition = 22, RULE_modifierDefinition = 23, RULE_fallbackFunctionDefinition = 24, 
-		RULE_receiveFunctionDefinition = 25, RULE_structDefinition = 26, RULE_structMember = 27, 
-		RULE_enumDefinition = 28, RULE_userDefinedValueTypeDefinition = 29, RULE_stateVariableDeclaration = 30, 
-		RULE_constantVariableDeclaration = 31, RULE_eventParameter = 32, RULE_eventDefinition = 33, 
-		RULE_errorParameter = 34, RULE_errorDefinition = 35, RULE_usingDirective = 36, 
-		RULE_typeName = 37, RULE_elementaryTypeName = 38, RULE_functionTypeName = 39, 
-		RULE_variableDeclaration = 40, RULE_dataLocation = 41, RULE_expression = 42, 
-		RULE_assignOp = 43, RULE_tupleExpression = 44, RULE_inlineArrayExpression = 45, 
-		RULE_identifier = 46, RULE_literal = 47, RULE_booleanLiteral = 48, RULE_stringLiteral = 49, 
-		RULE_hexStringLiteral = 50, RULE_unicodeStringLiteral = 51, RULE_numberLiteral = 52, 
-		RULE_block = 53, RULE_uncheckedBlock = 54, RULE_statement = 55, RULE_simpleStatement = 56, 
-		RULE_ifStatement = 57, RULE_forStatement = 58, RULE_whileStatement = 59, 
-		RULE_doWhileStatement = 60, RULE_continueStatement = 61, RULE_breakStatement = 62, 
-		RULE_tryStatement = 63, RULE_catchClause = 64, RULE_returnStatement = 65, 
-		RULE_emitStatement = 66, RULE_revertStatement = 67, RULE_assemblyStatement = 68, 
-		RULE_assemblyFlags = 69, RULE_variableDeclarationList = 70, RULE_variableDeclarationTuple = 71, 
-		RULE_variableDeclarationStatement = 72, RULE_expressionStatement = 73, 
-		RULE_mappingType = 74, RULE_mappingKeyType = 75, RULE_yulStatement = 76, 
-		RULE_yulBlock = 77, RULE_yulVariableDeclaration = 78, RULE_yulAssignment = 79, 
-		RULE_yulIfStatement = 80, RULE_yulForStatement = 81, RULE_yulSwitchCase = 82, 
-		RULE_yulSwitchStatement = 83, RULE_yulFunctionDefinition = 84, RULE_yulPath = 85, 
-		RULE_yulFunctionCall = 86, RULE_yulBoolean = 87, RULE_yulLiteral = 88, 
+		RULE_sourceUnit = 0, RULE_pragmaDirective = 1, RULE_importDirective = 2,
+		RULE_importAliases = 3, RULE_path = 4, RULE_symbolAliases = 5, RULE_contractDefinition = 6,
+		RULE_interfaceDefinition = 7, RULE_libraryDefinition = 8, RULE_inheritanceSpecifierList = 9,
+		RULE_inheritanceSpecifier = 10, RULE_contractBodyElement = 11, RULE_namedArgument = 12,
+		RULE_callArgumentList = 13, RULE_identifierPath = 14, RULE_modifierInvocation = 15,
+		RULE_visibility = 16, RULE_parameterList = 17, RULE_parameterDeclaration = 18,
+		RULE_constructorDefinition = 19, RULE_stateMutability = 20, RULE_overrideSpecifier = 21,
+		RULE_functionDefinition = 22, RULE_modifierDefinition = 23, RULE_fallbackFunctionDefinition = 24,
+		RULE_receiveFunctionDefinition = 25, RULE_structDefinition = 26, RULE_structMember = 27,
+		RULE_enumDefinition = 28, RULE_userDefinedValueTypeDefinition = 29, RULE_stateVariableDeclaration = 30,
+		RULE_constantVariableDeclaration = 31, RULE_eventParameter = 32, RULE_eventDefinition = 33,
+		RULE_errorParameter = 34, RULE_errorDefinition = 35, RULE_usingDirective = 36,
+		RULE_typeName = 37, RULE_elementaryTypeName = 38, RULE_functionTypeName = 39,
+		RULE_variableDeclaration = 40, RULE_dataLocation = 41, RULE_expression = 42,
+		RULE_assignOp = 43, RULE_tupleExpression = 44, RULE_inlineArrayExpression = 45,
+		RULE_identifier = 46, RULE_literal = 47, RULE_booleanLiteral = 48, RULE_stringLiteral = 49,
+		RULE_hexStringLiteral = 50, RULE_unicodeStringLiteral = 51, RULE_numberLiteral = 52,
+		RULE_block = 53, RULE_uncheckedBlock = 54, RULE_statement = 55, RULE_simpleStatement = 56,
+		RULE_ifStatement = 57, RULE_forStatement = 58, RULE_whileStatement = 59,
+		RULE_doWhileStatement = 60, RULE_continueStatement = 61, RULE_breakStatement = 62,
+		RULE_tryStatement = 63, RULE_catchClause = 64, RULE_returnStatement = 65,
+		RULE_emitStatement = 66, RULE_revertStatement = 67, RULE_assemblyStatement = 68,
+		RULE_assemblyFlags = 69, RULE_variableDeclarationList = 70, RULE_variableDeclarationTuple = 71,
+		RULE_variableDeclarationStatement = 72, RULE_expressionStatement = 73,
+		RULE_mappingType = 74, RULE_mappingKeyType = 75, RULE_yulStatement = 76,
+		RULE_yulBlock = 77, RULE_yulVariableDeclaration = 78, RULE_yulAssignment = 79,
+		RULE_yulIfStatement = 80, RULE_yulForStatement = 81, RULE_yulSwitchCase = 82,
+		RULE_yulSwitchStatement = 83, RULE_yulFunctionDefinition = 84, RULE_yulPath = 85,
+		RULE_yulFunctionCall = 86, RULE_yulBoolean = 87, RULE_yulLiteral = 88,
 		RULE_yulExpression = 89;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"sourceUnit", "pragmaDirective", "importDirective", "importAliases", 
-			"path", "symbolAliases", "contractDefinition", "interfaceDefinition", 
-			"libraryDefinition", "inheritanceSpecifierList", "inheritanceSpecifier", 
-			"contractBodyElement", "namedArgument", "callArgumentList", "identifierPath", 
-			"modifierInvocation", "visibility", "parameterList", "parameterDeclaration", 
-			"constructorDefinition", "stateMutability", "overrideSpecifier", "functionDefinition", 
-			"modifierDefinition", "fallbackFunctionDefinition", "receiveFunctionDefinition", 
-			"structDefinition", "structMember", "enumDefinition", "userDefinedValueTypeDefinition", 
-			"stateVariableDeclaration", "constantVariableDeclaration", "eventParameter", 
-			"eventDefinition", "errorParameter", "errorDefinition", "usingDirective", 
-			"typeName", "elementaryTypeName", "functionTypeName", "variableDeclaration", 
-			"dataLocation", "expression", "assignOp", "tupleExpression", "inlineArrayExpression", 
-			"identifier", "literal", "booleanLiteral", "stringLiteral", "hexStringLiteral", 
-			"unicodeStringLiteral", "numberLiteral", "block", "uncheckedBlock", "statement", 
-			"simpleStatement", "ifStatement", "forStatement", "whileStatement", "doWhileStatement", 
-			"continueStatement", "breakStatement", "tryStatement", "catchClause", 
-			"returnStatement", "emitStatement", "revertStatement", "assemblyStatement", 
-			"assemblyFlags", "variableDeclarationList", "variableDeclarationTuple", 
-			"variableDeclarationStatement", "expressionStatement", "mappingType", 
-			"mappingKeyType", "yulStatement", "yulBlock", "yulVariableDeclaration", 
-			"yulAssignment", "yulIfStatement", "yulForStatement", "yulSwitchCase", 
-			"yulSwitchStatement", "yulFunctionDefinition", "yulPath", "yulFunctionCall", 
+			"sourceUnit", "pragmaDirective", "importDirective", "importAliases",
+			"path", "symbolAliases", "contractDefinition", "interfaceDefinition",
+			"libraryDefinition", "inheritanceSpecifierList", "inheritanceSpecifier",
+			"contractBodyElement", "namedArgument", "callArgumentList", "identifierPath",
+			"modifierInvocation", "visibility", "parameterList", "parameterDeclaration",
+			"constructorDefinition", "stateMutability", "overrideSpecifier", "functionDefinition",
+			"modifierDefinition", "fallbackFunctionDefinition", "receiveFunctionDefinition",
+			"structDefinition", "structMember", "enumDefinition", "userDefinedValueTypeDefinition",
+			"stateVariableDeclaration", "constantVariableDeclaration", "eventParameter",
+			"eventDefinition", "errorParameter", "errorDefinition", "usingDirective",
+			"typeName", "elementaryTypeName", "functionTypeName", "variableDeclaration",
+			"dataLocation", "expression", "assignOp", "tupleExpression", "inlineArrayExpression",
+			"identifier", "literal", "booleanLiteral", "stringLiteral", "hexStringLiteral",
+			"unicodeStringLiteral", "numberLiteral", "block", "uncheckedBlock", "statement",
+			"simpleStatement", "ifStatement", "forStatement", "whileStatement", "doWhileStatement",
+			"continueStatement", "breakStatement", "tryStatement", "catchClause",
+			"returnStatement", "emitStatement", "revertStatement", "assemblyStatement",
+			"assemblyFlags", "variableDeclarationList", "variableDeclarationTuple",
+			"variableDeclarationStatement", "expressionStatement", "mappingType",
+			"mappingKeyType", "yulStatement", "yulBlock", "yulVariableDeclaration",
+			"yulAssignment", "yulIfStatement", "yulForStatement", "yulSwitchCase",
+			"yulSwitchStatement", "yulFunctionDefinition", "yulPath", "yulFunctionCall",
 			"yulBoolean", "yulLiteral", "yulExpression"
 		};
 	}
@@ -111,58 +109,58 @@ public class SolidityParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, null, "'pragma'", "'abstract'", "'anonymous'", "'address'", "'as'", 
-			"'assembly'", "'bool'", null, "'bytes'", "'calldata'", "'catch'", "'constant'", 
-			"'constructor'", null, "'contract'", "'delete'", "'do'", "'else'", "'emit'", 
-			"'enum'", "'error'", "'revert'", "'event'", "'external'", "'fallback'", 
-			null, null, "'from'", null, null, null, "'global'", null, null, "'immutable'", 
-			"'import'", "'indexed'", "'interface'", "'internal'", "'is'", "'library'", 
-			"'mapping'", "'memory'", "'modifier'", "'new'", null, "'override'", "'payable'", 
-			"'private'", "'public'", "'pure'", "'receive'", "'return'", "'returns'", 
-			null, "'storage'", "'string'", "'struct'", null, "'try'", "'type'", null, 
-			"'unchecked'", null, "'using'", "'view'", "'virtual'", "'while'", null, 
-			null, "'['", "']'", null, null, "':'", null, null, "'?'", "'=>'", null, 
-			"'='", "'|='", "'^='", "'&='", "'<<='", "'>>='", "'>>>='", "'+='", "'-='", 
-			"'*='", "'/='", "'%='", null, "'||'", "'&&'", "'|'", "'^'", "'&'", "'<<'", 
-			"'>>'", "'>>>'", "'+'", "'-'", "'*'", "'/'", "'%'", "'**'", "'=='", "'!='", 
-			"'<'", "'>'", "'<='", "'>='", "'!'", "'~'", "'++'", "'--'", "'\"'", "'''", 
-			null, null, null, null, null, null, null, null, null, null, "'\"evmasm\"'", 
-			null, null, null, null, null, null, null, null, null, "'case'", null, 
-			"'default'", null, null, null, null, "'leave'", "'let'", "'switch'", 
+			null, null, "'pragma'", "'abstract'", "'anonymous'", "'address'", "'as'",
+			"'assembly'", "'bool'", null, "'bytes'", "'calldata'", "'catch'", "'constant'",
+			"'constructor'", null, "'contract'", "'delete'", "'do'", "'else'", "'emit'",
+			"'enum'", "'error'", "'revert'", "'event'", "'external'", "'fallback'",
+			null, null, "'from'", null, null, null, "'global'", null, null, "'immutable'",
+			"'import'", "'indexed'", "'interface'", "'internal'", "'is'", "'library'",
+			"'mapping'", "'memory'", "'modifier'", "'new'", null, "'override'", "'payable'",
+			"'private'", "'public'", "'pure'", "'receive'", "'return'", "'returns'",
+			null, "'storage'", "'string'", "'struct'", null, "'try'", "'type'", null,
+			"'unchecked'", null, "'using'", "'view'", "'virtual'", "'while'", null,
+			null, "'['", "']'", null, null, "':'", null, null, "'?'", "'=>'", null,
+			"'='", "'|='", "'^='", "'&='", "'<<='", "'>>='", "'>>>='", "'+='", "'-='",
+			"'*='", "'/='", "'%='", null, "'||'", "'&&'", "'|'", "'^'", "'&'", "'<<'",
+			"'>>'", "'>>>'", "'+'", "'-'", "'*'", "'/'", "'%'", "'**'", "'=='", "'!='",
+			"'<'", "'>'", "'<='", "'>='", "'!'", "'~'", "'++'", "'--'", "'\"'", "'''",
+			null, null, null, null, null, null, null, null, null, null, "'\"evmasm\"'",
+			null, null, null, null, null, null, null, null, null, "'case'", null,
+			"'default'", null, null, null, null, "'leave'", "'let'", "'switch'",
 			null, null, null, null, null, null, null, "':='"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "ReservedKeywords", "Pragma", "Abstract", "Anonymous", "Address", 
-			"As", "Assembly", "Bool", "Break", "Bytes", "Calldata", "Catch", "Constant", 
-			"Constructor", "Continue", "Contract", "Delete", "Do", "Else", "Emit", 
-			"Enum", "Error", "Revert", "Event", "External", "Fallback", "False", 
-			"Fixed", "From", "FixedBytes", "For", "Function", "Global", "Hex", "If", 
-			"Immutable", "Import", "Indexed", "Interface", "Internal", "Is", "Library", 
-			"Mapping", "Memory", "Modifier", "New", "NumberUnit", "Override", "Payable", 
-			"Private", "Public", "Pure", "Receive", "Return", "Returns", "SignedIntegerType", 
-			"Storage", "String", "Struct", "True", "Try", "Type", "Ufixed", "Unchecked", 
-			"UnsignedIntegerType", "Using", "View", "Virtual", "While", "LParen", 
-			"RParen", "LBrack", "RBrack", "LBrace", "RBrace", "Colon", "Semicolon", 
-			"Period", "Conditional", "DoubleArrow", "RightArrow", "Assign", "AssignBitOr", 
-			"AssignBitXor", "AssignBitAnd", "AssignShl", "AssignSar", "AssignShr", 
-			"AssignAdd", "AssignSub", "AssignMul", "AssignDiv", "AssignMod", "Comma", 
-			"Or", "And", "BitOr", "BitXor", "BitAnd", "Shl", "Sar", "Shr", "Add", 
-			"Sub", "Mul", "Div", "Mod", "Exp", "Equal", "NotEqual", "LessThan", "GreaterThan", 
-			"LessThanOrEqual", "GreaterThanOrEqual", "Not", "BitNot", "Inc", "Dec", 
-			"DoubleQuote", "SingleQuote", "NonEmptyStringLiteral", "EmptyStringLiteral", 
-			"UnicodeStringLiteral", "HexString", "HexNumber", "DecimalNumber", "Identifier", 
-			"WS", "COMMENT", "LINE_COMMENT", "AssemblyDialect", "AssemblyLBrace", 
-			"AssemblyFlagString", "AssemblyBlockLParen", "AssemblyBlockRParen", "AssemblyBlockComma", 
-			"AssemblyBlockWS", "AssemblyBlockCOMMENT", "AssemblyBlockLINE_COMMENT", 
-			"YulBreak", "YulCase", "YulContinue", "YulDefault", "YulFalse", "YulFor", 
-			"YulFunction", "YulIf", "YulLeave", "YulLet", "YulSwitch", "YulTrue", 
-			"YulHex", "YulEVMBuiltin", "YulLBrace", "YulRBrace", "YulLParen", "YulRParen", 
-			"YulAssign", "YulPeriod", "YulComma", "YulArrow", "YulIdentifier", "YulHexNumber", 
-			"YulDecimalNumber", "YulStringLiteral", "YulHexStringLiteral", "YulWS", 
-			"YulCOMMENT", "YulLINE_COMMENT", "PragmaToken", "PragmaSemicolon", "PragmaWS", 
+			null, "ReservedKeywords", "Pragma", "Abstract", "Anonymous", "Address",
+			"As", "Assembly", "Bool", "Break", "Bytes", "Calldata", "Catch", "Constant",
+			"Constructor", "Continue", "Contract", "Delete", "Do", "Else", "Emit",
+			"Enum", "Error", "Revert", "Event", "External", "Fallback", "False",
+			"Fixed", "From", "FixedBytes", "For", "Function", "Global", "Hex", "If",
+			"Immutable", "Import", "Indexed", "Interface", "Internal", "Is", "Library",
+			"Mapping", "Memory", "Modifier", "New", "NumberUnit", "Override", "Payable",
+			"Private", "Public", "Pure", "Receive", "Return", "Returns", "SignedIntegerType",
+			"Storage", "String", "Struct", "True", "Try", "Type", "Ufixed", "Unchecked",
+			"UnsignedIntegerType", "Using", "View", "Virtual", "While", "LParen",
+			"RParen", "LBrack", "RBrack", "LBrace", "RBrace", "Colon", "Semicolon",
+			"Period", "Conditional", "DoubleArrow", "RightArrow", "Assign", "AssignBitOr",
+			"AssignBitXor", "AssignBitAnd", "AssignShl", "AssignSar", "AssignShr",
+			"AssignAdd", "AssignSub", "AssignMul", "AssignDiv", "AssignMod", "Comma",
+			"Or", "And", "BitOr", "BitXor", "BitAnd", "Shl", "Sar", "Shr", "Add",
+			"Sub", "Mul", "Div", "Mod", "Exp", "Equal", "NotEqual", "LessThan", "GreaterThan",
+			"LessThanOrEqual", "GreaterThanOrEqual", "Not", "BitNot", "Inc", "Dec",
+			"DoubleQuote", "SingleQuote", "NonEmptyStringLiteral", "EmptyStringLiteral",
+			"UnicodeStringLiteral", "HexString", "HexNumber", "DecimalNumber", "Identifier",
+			"WS", "COMMENT", "LINE_COMMENT", "AssemblyDialect", "AssemblyLBrace",
+			"AssemblyFlagString", "AssemblyBlockLParen", "AssemblyBlockRParen", "AssemblyBlockComma",
+			"AssemblyBlockWS", "AssemblyBlockCOMMENT", "AssemblyBlockLINE_COMMENT",
+			"YulBreak", "YulCase", "YulContinue", "YulDefault", "YulFalse", "YulFor",
+			"YulFunction", "YulIf", "YulLeave", "YulLet", "YulSwitch", "YulTrue",
+			"YulHex", "YulEVMBuiltin", "YulLBrace", "YulRBrace", "YulLParen", "YulRParen",
+			"YulAssign", "YulPeriod", "YulComma", "YulArrow", "YulIdentifier", "YulHexNumber",
+			"YulDecimalNumber", "YulStringLiteral", "YulHexStringLiteral", "YulWS",
+			"YulCOMMENT", "YulLINE_COMMENT", "PragmaToken", "PragmaSemicolon", "PragmaWS",
 			"PragmaCOMMENT", "PragmaLINE_COMMENT"
 		};
 	}
@@ -394,7 +392,7 @@ public class SolidityParser extends Parser {
 						}
 						break;
 					}
-					} 
+					}
 				}
 				setState(196);
 				_errHandler.sync(this);
@@ -445,7 +443,7 @@ public class SolidityParser extends Parser {
 			{
 			setState(199);
 			match(Pragma);
-			setState(201); 
+			setState(201);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			do {
@@ -455,7 +453,7 @@ public class SolidityParser extends Parser {
 				match(PragmaToken);
 				}
 				}
-				setState(203); 
+				setState(203);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			} while ( _la==PragmaToken );
@@ -826,7 +824,7 @@ public class SolidityParser extends Parser {
 					setState(254);
 					contractBodyElement();
 					}
-					} 
+					}
 				}
 				setState(259);
 				_errHandler.sync(this);
@@ -912,7 +910,7 @@ public class SolidityParser extends Parser {
 					setState(268);
 					contractBodyElement();
 					}
-					} 
+					}
 				}
 				setState(273);
 				_errHandler.sync(this);
@@ -984,7 +982,7 @@ public class SolidityParser extends Parser {
 					setState(279);
 					contractBodyElement();
 					}
-					} 
+					}
 				}
 				setState(284);
 				_errHandler.sync(this);
@@ -1058,7 +1056,7 @@ public class SolidityParser extends Parser {
 					((InheritanceSpecifierListContext)_localctx).inheritanceSpecifier = inheritanceSpecifier();
 					((InheritanceSpecifierListContext)_localctx).inheritanceSpecifiers.add(((InheritanceSpecifierListContext)_localctx).inheritanceSpecifier);
 					}
-					} 
+					}
 				}
 				setState(295);
 				_errHandler.sync(this);
@@ -1509,7 +1507,7 @@ public class SolidityParser extends Parser {
 					setState(347);
 					identifier();
 					}
-					} 
+					}
 				}
 				setState(352);
 				_errHandler.sync(this);
@@ -1877,7 +1875,7 @@ public class SolidityParser extends Parser {
 						}
 						break;
 					}
-					} 
+					}
 				}
 				setState(394);
 				_errHandler.sync(this);
@@ -2209,7 +2207,7 @@ public class SolidityParser extends Parser {
 						}
 						break;
 					}
-					} 
+					}
 				}
 				setState(444);
 				_errHandler.sync(this);
@@ -2366,7 +2364,7 @@ public class SolidityParser extends Parser {
 						}
 						break;
 					}
-					} 
+					}
 				}
 				setState(476);
 				_errHandler.sync(this);
@@ -2490,7 +2488,7 @@ public class SolidityParser extends Parser {
 				{
 				setState(483);
 				parameterList();
-				 ((FallbackFunctionDefinitionContext)_localctx).hasParameters =  true; 
+				 ((FallbackFunctionDefinitionContext)_localctx).hasParameters =  true;
 				}
 				break;
 			}
@@ -2548,7 +2546,7 @@ public class SolidityParser extends Parser {
 						}
 						break;
 					}
-					} 
+					}
 				}
 				setState(508);
 				_errHandler.sync(this);
@@ -2726,7 +2724,7 @@ public class SolidityParser extends Parser {
 						}
 						break;
 					}
-					} 
+					}
 				}
 				setState(543);
 				_errHandler.sync(this);
@@ -2805,7 +2803,7 @@ public class SolidityParser extends Parser {
 			((StructDefinitionContext)_localctx).name = identifier();
 			setState(550);
 			match(LBrace);
-			setState(552); 
+			setState(552);
 			_errHandler.sync(this);
 			_alt = 1;
 			do {
@@ -2821,7 +2819,7 @@ public class SolidityParser extends Parser {
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(554); 
+				setState(554);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,50,_ctx);
 			} while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER );
@@ -3154,7 +3152,7 @@ public class SolidityParser extends Parser {
 						}
 						break;
 					}
-					} 
+					}
 				}
 				setState(605);
 				_errHandler.sync(this);
@@ -3806,7 +3804,7 @@ public class SolidityParser extends Parser {
 					setState(703);
 					match(RBrack);
 					}
-					} 
+					}
 				}
 				setState(708);
 				_errHandler.sync(this);
@@ -4045,7 +4043,7 @@ public class SolidityParser extends Parser {
 						}
 						break;
 					}
-					} 
+					}
 				}
 				setState(741);
 				_errHandler.sync(this);
@@ -4194,7 +4192,7 @@ public class SolidityParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_expression; }
-	 
+
 		public ExpressionContext() { }
 		public void copyFrom(ExpressionContext ctx) {
 			super.copyFrom(ctx);
@@ -5173,7 +5171,7 @@ public class SolidityParser extends Parser {
 						}
 						break;
 					}
-					} 
+					}
 				}
 				setState(864);
 				_errHandler.sync(this);
@@ -5625,7 +5623,7 @@ public class SolidityParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(905); 
+			setState(905);
 			_errHandler.sync(this);
 			_alt = 1;
 			do {
@@ -5649,7 +5647,7 @@ public class SolidityParser extends Parser {
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(907); 
+				setState(907);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,91,_ctx);
 			} while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER );
@@ -5692,7 +5690,7 @@ public class SolidityParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(910); 
+			setState(910);
 			_errHandler.sync(this);
 			_alt = 1;
 			do {
@@ -5708,7 +5706,7 @@ public class SolidityParser extends Parser {
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(912); 
+				setState(912);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,92,_ctx);
 			} while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER );
@@ -5751,7 +5749,7 @@ public class SolidityParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(915); 
+			setState(915);
 			_errHandler.sync(this);
 			_alt = 1;
 			do {
@@ -5767,7 +5765,7 @@ public class SolidityParser extends Parser {
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(917); 
+				setState(917);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,93,_ctx);
 			} while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER );
@@ -5902,7 +5900,7 @@ public class SolidityParser extends Parser {
 						}
 						break;
 					}
-					} 
+					}
 				}
 				setState(930);
 				_errHandler.sync(this);
@@ -6614,7 +6612,7 @@ public class SolidityParser extends Parser {
 
 			setState(1009);
 			block();
-			setState(1011); 
+			setState(1011);
 			_errHandler.sync(this);
 			_alt = 1;
 			do {
@@ -6630,7 +6628,7 @@ public class SolidityParser extends Parser {
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(1013); 
+				setState(1013);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,104,_ctx);
 			} while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER );
@@ -7150,7 +7148,7 @@ public class SolidityParser extends Parser {
 					setState(1079);
 					match(Comma);
 					}
-					} 
+					}
 				}
 				setState(1084);
 				_errHandler.sync(this);
@@ -7815,7 +7813,7 @@ public class SolidityParser extends Parser {
 				{
 				setState(1172);
 				yulPath();
-				setState(1175); 
+				setState(1175);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				do {
@@ -7827,7 +7825,7 @@ public class SolidityParser extends Parser {
 					yulPath();
 					}
 					}
-					setState(1177); 
+					setState(1177);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				} while ( _la==YulComma );
@@ -8051,7 +8049,7 @@ public class SolidityParser extends Parser {
 			case YulCase:
 				{
 				{
-				setState(1201); 
+				setState(1201);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 				do {
@@ -8061,7 +8059,7 @@ public class SolidityParser extends Parser {
 					yulSwitchCase();
 					}
 					}
-					setState(1203); 
+					setState(1203);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				} while ( _la==YulCase );

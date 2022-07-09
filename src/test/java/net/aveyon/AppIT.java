@@ -3,6 +3,7 @@ package net.aveyon;
 import net.aveyon.intermediate_solidity.DataLocation;
 import net.aveyon.intermediate_solidity.Function;
 import net.aveyon.intermediate_solidity.SmartContractModel;
+import net.aveyon.solidity_parser.App;
 import org.junit.Test;
 
 import java.util.Objects;
@@ -17,7 +18,7 @@ public class AppIT {
                 .getPath();
 
         // WHEN
-        SmartContractModel scm = App.parse(path);
+        SmartContractModel scm = new App().parse(path);
 
         // THEN
         assertNotNull(scm);
@@ -31,7 +32,7 @@ public class AppIT {
                 .getPath();
 
         // WHEN
-        SmartContractModel scm = App.parse(path);
+        SmartContractModel scm = new App().parse(path);
 
         // THEN
         assertNotNull(scm);
@@ -46,7 +47,7 @@ public class AppIT {
                 .getPath();
 
         // WHEN
-        SmartContractModel scm = App.parse(path);
+        SmartContractModel scm = new App().parse(path);
 
         // THEN
         assertNotNull(scm);

@@ -1,5 +1,5 @@
 // Generated from SolidityParser.g4 by ANTLR 4.10.1
-package net.aveyon.parser;
+package net.aveyon.solidity_parser.parser;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**

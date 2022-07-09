@@ -1,10 +1,6 @@
 // Generated from SolidityParser.g4 by ANTLR 4.10.1
-package net.aveyon.parser;
+package net.aveyon.solidity_parser.parser;
 
-import net.aveyon.intermediate_solidity.SmartContract;
-import net.aveyon.intermediate_solidity.SmartContractModel;
-import net.aveyon.intermediate_solidity.impl.SmartContractImpl;
-import net.aveyon.intermediate_solidity.impl.SmartContractModelImpl;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;

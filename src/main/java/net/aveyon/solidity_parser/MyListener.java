@@ -1,11 +1,10 @@
-package net.aveyon;
+package net.aveyon.solidity_parser;
 
 import net.aveyon.intermediate_solidity.*;
 import net.aveyon.intermediate_solidity.impl.*;
-import net.aveyon.parser.SolidityParser;
-import net.aveyon.parser.SolidityParserBaseListener;
+import net.aveyon.solidity_parser.parser.SolidityParser;
+import net.aveyon.solidity_parser.parser.SolidityParserBaseListener;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
