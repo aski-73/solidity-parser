@@ -14,7 +14,7 @@ import java.net.URISyntaxException;
 import java.util.Objects;
 
 public class App implements Api {
-    public static void main(String[] args) throws IOException, URISyntaxException {
+    public static void main(String[] args) throws IOException {
         String file = "sm_purchase.plantuml";
 
         InputStream in;
@@ -77,17 +77,5 @@ public class App implements Api {
         walker.walk(listener, parseTree);
 
         return listener.getSmartContractModel();
-    }
-
-    private static void inspect(InputStream in) throws IOException {
-        CharStream input = CharStreams.fromStream(in);
-        // Lexer erstellen
-        SolidityLexer lexer = new SolidityLexer(input);
-        // Vom Lexer gelesene Tokens
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        // Parser erzeugen
-        SolidityParser parser = new SolidityParser(tokens);
-
-        org.antlr.v4.gui.Trees.inspect(parser.sourceUnit(), parser);
     }
 }

@@ -71,10 +71,7 @@ public class MyListener extends SolidityParserBaseListener {
     public void enterFunctionDefinition(SolidityParser.FunctionDefinitionContext ctx) {
         Function f = new FunctionImpl(ctx.identifier().getText());
         f.getParameters().addAll(enterParameterListReturnsIntermediateSolidityParams(ctx.arguments));
-        f.getReturns().addAll(
-                enterParameterListReturnsIntermediateSolidityParams(ctx.returnParameters).stream()
-                        .map(FunctionParameter::getType).collect(Collectors.toList())
-        );
+        f.getReturns().addAll(enterParameterListReturnsIntermediateSolidityParams(ctx.returnParameters));
 
         latestParsedFunction = f;
     }
@@ -88,11 +85,10 @@ public class MyListener extends SolidityParserBaseListener {
         ctx.parameters.forEach(it -> {
             // return value names are optional
             String paramName = it.name != null ? it.name.getText() : "";
-            FunctionParameter p = new FunctionParameterImpl(paramName);
+            FunctionParameter p = new FunctionParameterImpl(paramName, new TypeImpl(it.type.getText()));
             if (it.dataLocation() != null) {
                 p.setDataLocation(DataLocation.Companion.parse(it.location.getText()));
             }
-            p.setType(it.type.getText());
 
             l.add(p);
         });

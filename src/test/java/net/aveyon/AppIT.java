@@ -56,14 +56,14 @@ public class AppIT {
         // Params
         assertEquals(3, f.getParameters().size());
         assertEquals("a", f.getParameters().get(0).getName());
-        assertEquals("uint", f.getParameters().get(0).getType());
+        assertEquals("uint", f.getParameters().get(0).getType().getName());
         assertEquals("s", f.getParameters().get(1).getName());
-        assertEquals("string", f.getParameters().get(1).getType());
+        assertEquals("string", f.getParameters().get(1).getType().getName());
         assertEquals(DataLocation.MEMORY, f.getParameters().get(1).getDataLocation());
         assertEquals("e", f.getParameters().get(2).getName());
-        assertEquals("Entity", f.getParameters().get(2).getType());
+        assertEquals("Entity", f.getParameters().get(2).getType().getName());
         assertEquals(DataLocation.MEMORY, f.getParameters().get(2).getDataLocation());
         // Returns
-        assertEquals("string", f.getReturns().get(0));
+        assertEquals("string", f.getReturns().get(0).getType().getName());
     }
 }
